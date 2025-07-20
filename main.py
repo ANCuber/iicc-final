@@ -7,7 +7,7 @@ import os
 original_path = 'answers'  # folder with original sound effects
 
 # Path to the file you want to compare against (can also be .m4a)
-compare_path = 'soundtrack/test1.wav'
+compare_path = 'soundtrack/test-1.wav'
 
 # Sample rate and metric weights (adjust as needed)
 sample_rate = 44100
