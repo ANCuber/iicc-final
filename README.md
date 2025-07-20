@@ -6,10 +6,15 @@ The code here is used for 22-nd iicc final, where we need to compare the similar
 
 ### Environment
 Run the following commands on your (Visual Studio Code) terminal.
+#### venv
 ```
 python -m venv venv // Can be skipped if already did before
 source venv/bin/activate
-pip install audio-similarity
+```
+#### package
+```
+pip install --upgrade pip // Can be skipped if already did before
+pip install audio-similarity==1.0.0
 ```
 Now the environment should be ready.
 
