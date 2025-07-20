@@ -31,7 +31,7 @@ Now the environment should be ready.
 #### Convert .m4a to .wav
 Firstly, you need to move the target audio file to `soundtrack` directory from your iPhone, and rename it `test-X.m4a`, where X is the index of the problem. Afterwards, run the following command.
 ```
-ffmpeg -i test-X.m4a test-X.wav
+ffmpeg -i soundtrack/test-X.m4a soundtrack/test-X.wav
 ```
 #### Run main.py
 Run the following command.
