@@ -11,32 +11,22 @@ Run the following commands on your (Visual Studio Code) terminal.
 python -m venv venv // Can be skipped if already did before
 source venv/bin/activate
 ```
-#### package
-```
-pip install --upgrade pip // Can be skipped if already did before
-pip install audio-similarity==1.0.0
-```
 #### file conversion
 ##### On Mac
 ```
 brew install ffmpeg
 ```
-##### On Linux
-```
-sudo apt install ffmpeg
-```
 Now the environment should be ready.
+#### package
+```
+pip install --upgrade pip // Can be skipped if already did before
+pip install audio-similarity==1.0.0 streamlit pydub
+```
 
 ### Run the Code
-#### Convert .m4a to .wav
-Firstly, you need to move the target audio file to `soundtrack` directory from your iPhone, and rename it `test-X.m4a`, where X is the index of the problem. Afterwards, run the following command.
+Run the following command and follow the instructions in a webpage.
 ```
-ffmpeg -i soundtrack/test-X.m4a soundtrack/test-X.wav
-```
-#### Run main.py
-Run the following command.
-```
-python main.py
+streamlit python3 app.py
 ```
 
 
