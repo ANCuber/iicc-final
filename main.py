@@ -1,4 +1,5 @@
 from audio_similarity import AudioSimilarity
+from pydub import AudioSegment
 import os
 
 # === CONFIGURATION ===
@@ -7,17 +8,28 @@ import os
 original_path = 'answers'  # folder with original sound effects
 
 # Path to the file you want to compare against (can also be .m4a)
-compare_path = 'soundtrack/test-1.wav'
+testcase = str(input("Please enter the ID (a number) of the problem: "))
+mock_effect = 'soundtrack/test-'+testcase+'.m4a'
+
+try:
+    audio = AudioSegment.from_file(mock_effect, format="m4a")
+except:
+    print("Invalid problem ID or No file.")
+    exit(1)
+
+compare_path = "output-"+testcase+".wav"
+audio.export(compare_path, format="wav")
+
 
 # Sample rate and metric weights (adjust as needed)
 sample_rate = 44100
 weights = {
-    'zcr_similarity': 0.15,
-    'rhythm_similarity': 0.10,
-    'chroma_similarity': 0.05,
-    'energy_envelope_similarity': 0.25,
-    'spectral_contrast_similarity': 0.25,
-    'perceptual_similarity': 0.20
+    'zcr_similarity': 0.00,
+    'rhythm_similarity': 0.00,
+    'chroma_similarity': 0.00,
+    'energy_envelope_similarity': 0.50,
+    'spectral_contrast_similarity': 0.50,
+    'perceptual_similarity': 0.00
 }
 
 sample_size = None   # Speed optimization for folders with many files
